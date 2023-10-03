@@ -17,8 +17,11 @@
             </div>
             {% endfor %}
         </div>
-
-        <a class="button button-primary" href="{{ page.pub_date }}">{{pub_date}}</a>
-
+        {% if prev_page %}
+            <a class="button button-primary" href="{% url 'book_date' prev_page %}"><-{{prev_page}} </a>
+        {% endif %}
+        {% if next_page %}
+            <a class="button button-primary" href="{% url 'book_date' next_page %}"> {{next_page}}-></a>
+        {% endif %}
     </div>
 {% endblock %}

@@ -22,6 +22,6 @@ urlpatterns = [
     path('', books_view, name='books'),
     path('books/', books_view, name='books_list'),
     path('admin/', admin.site.urls),
-    re_path(r'books/(?P<date>[0-9]{4}-[0-9]{2}-[0-9]{2})/$', books_date_view)
+    re_path(r'books/(?P<date>[0-9]{4}-[0-9]{2}-[0-9]{2})/$', books_date_view, name='book_date')
     # path('books/<[0-9]{4}-[0-9]{2}-[0-9]{2}:date>/', books_date_view)
 ]
