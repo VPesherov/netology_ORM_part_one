@@ -31,5 +31,6 @@ def books_date_view(request, date):
     books = [{'name': b.name, 'author': b.author, 'pub_date': b.pub_date} for b in book_objects]
     # paginator = Paginator(books, 10)
     # page = paginator.get_page(page_date)
+    # context = {'books': books, 'page': page}
     context = {'books': books, 'prev_page': prev_page, 'next_page': next_page}
     return render(request, template, context)
